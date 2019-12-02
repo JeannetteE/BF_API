@@ -79,3 +79,5 @@ while read line || [[ -n "$line" ]]; do
     curl -o datasæt.json https://api.unpaywall.org/v2/$line?email=asger.hansen@gmail.com
 done < "$filename"
 ```
+
+Eksperimenter eventuelt med at videreudbygge scriptet. Du kan finde mere information om curl ved at skrive 'man curl' i terminal.
