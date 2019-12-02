@@ -66,6 +66,7 @@ if __name__ == '__main__':
 ```bash
 
 #!/bin/bash
+
 filename=./datasæt.csv
 while read line || [[ -n "$line" ]]; do
     echo $line
