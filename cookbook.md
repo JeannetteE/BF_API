@@ -65,7 +65,7 @@ if __name__ == '__main__':
 Bash er en kommandofortolker, som indgår i GNU-projektet. Den er almindeligt forekommende i Unix-lignende operativsystemer, desuden er den forudinstalleret som kommandofortolker i Mac OS X. Scriptet foretager det samme som ovenstående Python script, men er dog langt kortere. Scriptet afvikles ved at downloade scriptet oadoi.sh og køre kommandoen 'chmod u+x oadoi.sh' hvilket giver dig (user) kørsels (execution) rettigheder på filen. Gør du ikke dette vil du få 'adgang nægtet/permission denied'.
 Script kan nu afvikles med kommandoen ./oadoi.sh
 
-Scriptet kan downloades her: https://github.com/enemydown-dk/BF_API/blob/master/filer/oadoi.sh
+Download koden her: https://github.com/enemydown-dk/BF_API/blob/master/filer/oadoi.sh
 
 **Kode:**
 
