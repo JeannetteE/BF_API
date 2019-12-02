@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
 ```
 <h2>OADOI BASH script</h2>
-```sh
+Kode::
 #!/bin/bash
 filename=./datasæt.csv
 while read line || [[ -n "$line" ]]; do
