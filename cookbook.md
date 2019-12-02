@@ -1,4 +1,4 @@
-<h2>OADOI script</h2>
+<h2>OADOI Python3 script</h2>
 Følgende script udtrækker x antal poster fra unpaywall API indeholdende OA statusinformation.
 Læs information i scriptet for mere information. Scriptet afvikles ved at placere dette script oadoi.py og datasæt.csv i samme folder og kalde kommandoen python oadoi.py fra terminal (Linux eller Mac) eller commandline (Windows).
 Output til skærm og til filen datasæt.json. Parametre kan ændres i scriptet.
@@ -60,4 +60,13 @@ def main():
 if __name__ == '__main__':
     main()
 
+```
+<h2>OADOI BASH script</h2>
+```bash
+#!/bin/bash
+filename=./datasæt.csv
+while read line || [[ -n "$line" ]]; do
+    echo $line
+    curl -o datasæt.json https://api.unpaywall.org/v2/$line?email=asger.hansen@gmail.com
+done < "$filename"
 ```
