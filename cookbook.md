@@ -1,7 +1,9 @@
 <h2>OADOI script</h2>
 Følgende script udtrækker x antal poster fra unpaywall API indeholdende OA statusinformation.
-Læs information i scriptet for mere information.
+Læs information i scriptet for mere information. Scriptet afvikles ved at placere dette script oadoi.py og datasæt.csv i samme folder og kalde kommandoen python oadoi.py fra terminal (Linux eller Mac) eller commandline (Windows).
+Output til skærm og til filen datasæt.json. Parametre kan ændres i scriptet.
 
+Download koden her: https://github.com/enemydown-dk/BF_API/blob/master/filer/oadoi.py
 
 **Kode:**
 ```python
