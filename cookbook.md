@@ -62,9 +62,10 @@ if __name__ == '__main__':
 
 ```
 <h2>OADOI BASH script</h2>
+
 **Kode:**
 
-```bash
+```sh
 
 #!/bin/bash
 
