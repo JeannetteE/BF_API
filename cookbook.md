@@ -88,6 +88,8 @@ Scriptet afvikles ved at placere dette script scidoi.py og datasæt.csv i samme 
 
 
 ```python
+#!/usr/bin/env python3
+
 """
 Script til at udtrække OA metadata from Science Direct API.
 Brugen forudsætter at man er i besidelse af en API-nøgle.
