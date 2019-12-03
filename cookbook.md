@@ -85,7 +85,7 @@ Eksperimenter eventuelt med at videreudbygge scriptet. Du kan finde mere informa
 <h2>SCIDOI Python3 script</h2>
 Følgende script udtrækker x antal poster fra Science Direct API indeholdende OA metadata.
 Scriptet afvikles ved at placere dette script scidoi.py og datasæt.csv i samme folder og kalde kommandoen python scidoi.py fra terminal (Linux eller Mac) eller commandline (Windows). Output til skærm og til filen datasæt.json. Parametre kan ændres i scriptet. BEMÆRK: Du kan ikke anvende scriptet uden at have en API nøgle fra udbyderen (Elsevier). Den kan umiddelbart skaffes ved henvendelse. Scriptet er inkluderet som et eksempel på variation ift. at benytte samme fremgangsmåde til et andet API.
-
+Download koden her: https://github.com/enemydown-dk/BF_API/blob/master/filer/scidoi.py
 
 ```python
 #!/usr/bin/env python3
