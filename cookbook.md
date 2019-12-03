@@ -1,5 +1,5 @@
 <h2>OADOI Python3 script</h2>
-Følgende script udtrækker x antal poster fra unpaywall API indeholdende OA statusinformation.
+Følgende script udtrækker x antal poster fra unpaywall API indeholdende OA metadata.
 Læs information i scriptet for mere information. Scriptet afvikles ved at placere dette script oadoi.py og datasæt.csv i samme folder og kalde kommandoen python oadoi.py fra terminal (Linux eller Mac) eller commandline (Windows).
 Output til skærm og til filen datasæt.json. Parametre kan ændres i scriptet.
 
@@ -81,3 +81,53 @@ done < "$filename"
 ```
 
 Eksperimenter eventuelt med at videreudbygge scriptet. Du kan finde mere information om curl ved at skrive 'man curl' i terminal.
+
+<h2>SCIDOI API script</h2>
+Følgende script udtrækker x antal poster fra Science Direct API indeholdende OA metadata.
+Scriptet afvikles ved at placere dette script scidoi.py og datasæt.csv i samme folder og kalde kommandoen python scidoi.py fra terminal (Linux eller Mac) eller commandline (Windows). Output til skærm og til filen datasæt.json. Parametre kan ændres i scriptet. BEMÆRK: Du kan ikke anvende scriptet uden at have en API nøgle fra udbyderen (Elsevier). Den kan umiddelbart skaffes ved henvendelse. Scriptet er inkluderet som et eksempel på variation ift. at benytte samme fremgangsmåde til et andet API.
+
+
+```python
+"""
+Script til at udtrække OA metadata from Science Direct API.
+Brugen forudsætter at man er i besidelse af en API-nøgle.
+"""
+
+import urllib.request
+import urllib.error
+import json
+import csv
+
+APIKEY = 'indsæt_nøgle_her' #indtast din APIkey fra Science Direct her.
+FILE_NAME = 'datasæt.csv' #navn på inputfil her.
+JSON_NAME = 'datasæt.json' #navn på output fil her.
+
+def pull_data(url):
+    """Opslag i Science Direct API"""
+    req = urllib.request.Request(url)
+    try:
+        response = urllib.request.urlopen(req)
+        data = json.loads(response.read())
+        write_csv(JSON_NAME, data)
+        print(data)
+
+    except urllib.error.HTTPError as _:
+        print(_.reason)
+
+def write_csv(json_name, data):
+    """Skriver datastrøm (json) til outputfilen i variablen JSON_NAME"""
+    with open(json_name, mode="a") as file:
+        file.write(json.dumps(data))
+
+def main():
+    """Læser inputfilen i variablen FILE_NAME"""
+    with open(FILE_NAME, newline='') as _:
+        reader = csv.reader(_, delimiter=';')
+        for row in reader:
+            wos_url = "https://api.elsevier.com/content/article/doi/" \
+            + row[0] + "?apiKey=" + APIKEY + "&httpAccept=application%2Fjson"
+            pull_data(wos_url)
+
+if __name__ == '__main__':
+    main()
+```
